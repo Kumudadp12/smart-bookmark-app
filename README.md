@@ -2,7 +2,7 @@
 
 A full-stack bookmark management application built using Next.js (App Router) and Supabase, featuring Google OAuth authentication, real-time updates, and per-user data isolation.
 
-🔗 Live Demo: [Add your Vercel URL here]
+🔗 Live Demo: (https://smart-bookmark-app-ivory.vercel.app/)
 📂 GitHub Repository: [Add your repo link here]
 
 📌 Features
