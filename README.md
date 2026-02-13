@@ -1,137 +1,168 @@
-🚀 Smart Bookmark App
 
-A full-stack bookmark management application built using Next.js (App Router) and Supabase, featuring Google OAuth authentication, real-time updates, and per-user data isolation.
+# 🔖 Smart Bookmark App
 
-🔗 Live Demo: (https://smart-bookmark-app-ivory.vercel.app/)
+A modern, full-stack bookmark manager built with **Next.js, Supabase, and Tailwind CSS**.  
+Users can securely save, manage, and sync bookmarks in real-time across multiple browser tabs.
 
-📂 GitHub Repository: (https://github.com/Kumudadp12/smart-bookmark-app)
+---
 
-📌 Features
+## 🚀 Live Demo
 
-  🔐 Google OAuth Authentication (Supabase Auth)
+👉 https://smart-bookmark-app-ivory.vercel.app  
 
-  ➕ Add bookmarks (Title + URL)
+---
 
-  🗑 Delete your own bookmarks
+## ✨ Features
 
-  👤 Bookmarks are private per user
+- 🔐 Sign up and log in with **Google OAuth**
+- ➕ Add bookmarks (title + URL)
+- 🗑️ Delete personal bookmarks
+- 🔒 Bookmarks are private to each user
+- ⚡ Real-time sync across multiple tabs
+- 🎨 Modern responsive UI with Tailwind CSS
+- ☁️ Deployed on Vercel (production ready)
 
-  ⚡ Real-time updates across multiple tabs
+---
 
-  🎨 Modern UI using Tailwind CSS
+## 🧰 Tech Stack
 
-  ☁️ Deployed on Vercel (Production Ready)
+| Technology | Purpose |
+|------------|---------|
+| **Next.js (App Router)** | Frontend & Routing |
+| **Supabase Auth** | Google OAuth authentication |
+| **Supabase PostgreSQL** | Database |
+| **Supabase Realtime** | Live updates |
+| **Tailwind CSS** | UI styling |
+| **Vercel** | Deployment |
 
-🧱 Tech Stack
-  Technology	                Purpose
-  Next.js (App Router)	      Frontend + Routing
-  Supabase	                  Auth, Database, Realtime
-  PostgreSQL	                Database
-  Tailwind CSS	              UI Styling
-  Vercel	                    Deployment
-  
-🏗 Architecture Overview
+---
 
-  Authentication: Handled using Supabase Google OAuth.
+## 🏗️ Architecture Overview
 
-  Database: bookmarks table with user-specific filtering via user_id.
+**Authentication:**  
+Supabase Google OAuth (no password storage)
 
-  Security: Row-Level Security (RLS) ensures users only access their own data.
+**Database:**  
+`bookmarks` table filtered by `user_id`
 
-  Realtime Sync: Supabase Realtime subscriptions listen to INSERT, DELETE, and UPDATE events and refresh UI automatically.
+**Security:**  
+Row Level Security (RLS) ensures users access only their own data
 
-  Deployment: Environment variables configured securely on Vercel.
+**Realtime Sync:**  
+Supabase realtime subscriptions listen to INSERT, UPDATE, DELETE events and refresh UI instantly
 
-🗄 Database Schema
-  bookmarks Table
-  Column                      	Type
-  id	                          uuid
-  title	                        text
-  url	                          text
-  user_id	                      uuid
-  created_at	                  timestamp
-  
-⚙️ Setup & Installation
+**Deployment:**  
+Environment variables configured securely in Vercel
 
-  1️⃣ Clone the repository
-  git clone https://github.com/your-username/smart-bookmark-app.git
-  cd smart-bookmark-app
-  
-  2️⃣ Install dependencies
+---
+
+## 🗄️ Database Schema
+
+**Table:** `bookmarks`
+
+| Column | Type |
+|--------|------|
+| id | uuid |
+| title | text |
+| url | text |
+| user_id | uuid |
+| created_at | timestamp |
+
+---
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/Kumudadp12/smart-bookmark-app.git
+cd smart-bookmark-app
+```
+### 2️⃣ Install dependencies
+```bash
   npm install
-  
-  3️⃣ Configure Environment Variables
+```  
+  ### 3️⃣ Configure Environment Variables
   
   Create a .env.local file:
-  
+```bash  
   NEXT_PUBLIC_SUPABASE_URL=your_project_url
   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-  
-  4️⃣ Run locally
+ ``` 
+### 4️⃣ Run locally
+ ```bash
   npm run dev
-  
-  App will run on:
-  
+```  
+ ### App will run on:
+```bash  
   http://localhost:3000
+```
+---
 
-🚀 Deployment
+## 🚀 Deployment
 
-  The application is deployed on Vercel.
+ - The application is deployed on Vercel.
   
-  Steps followed:
+ - Steps followed:
   
-  Pushed project to GitHub
+ - Pushed project to GitHub
   
-  Imported repository into Vercel
+ - Imported repository into Vercel
   
-  Added Supabase environment variables
+ - Added Supabase environment variables
   
-  Configured Supabase Auth redirect URLs
+ - Configured Supabase Auth redirect URLs
   
-  Verified Google OAuth flow in production
+ - Verified Google OAuth flow in production
 
-🧠 Challenges & Solutions
+## 🧠 Challenges & Solutions
 
-  1️⃣ Realtime UI Not Updating Immediately
+### 1️⃣ Realtime UI Not Updating Immediately
   
   Issue: Bookmarks were only visible after manual refresh.
   Solution: Implemented Supabase Realtime subscription using .channel() and triggered UI refresh on postgres_changes.
   
-  2️⃣ OAuth Redirect Issues After Deployment
+### 2️⃣ OAuth Redirect Issues After Deployment
   
   Issue: Login worked locally but failed in production.
   Solution: Added Vercel production URL to Supabase Auth redirect settings.
   
-  3️⃣ GitHub Permission Conflicts During Deployment
+### 3️⃣ GitHub Permission Conflicts During Deployment
   
   Issue: Push permission errors due to multiple GitHub accounts.
   Solution: Updated remote repository and re-authenticated using correct GitHub account.
+---
 
-🔒 Security Considerations
+## 🔒 Security Considerations
 
-Row-Level Security (RLS) enabled
+- Row-Level Security (RLS) enabled
 
-User-based filtering via user_id
+- User-based filtering via user_id
 
-No sensitive keys exposed in frontend
+- No sensitive keys exposed in frontend
 
-Environment variables stored securely in Vercel
+- Environment variables stored securely in Vercel
+---
 
-📈 Future Improvements
+## 📈 Future Improvements
 
-Edit bookmarks
+- Edit bookmarks
 
-Tag & category system
+- Tag & category system
 
-Bookmark search
+- Bookmark search
 
-Drag-and-drop ordering
+- Drag-and-drop ordering
 
-Dark mode toggle
+- Dark mode toggle
 
-Pagination for large bookmark lists
+- Pagination for large bookmark lists
+---
 
-👩‍💻 Author
+## 👩‍💻 Author
 
-Kumuda DP
-Full Stack Developer | AI & Data Science Enthusiast
+### Kumuda DP
+### Full Stack Developer | AI & Data Science Enthusiast
+
+## GitHub:
+(https://github.com/Kumudadp)
+(https://github.com/Kumudadp12)
