@@ -119,17 +119,21 @@ cd smart-bookmark-app
 ### 1️⃣ Realtime UI Not Updating Immediately
   
   Issue: Bookmarks were only visible after manual refresh.
+  
   Solution: Implemented Supabase Realtime subscription using .channel() and triggered UI refresh on postgres_changes.
   
 ### 2️⃣ OAuth Redirect Issues After Deployment
   
   Issue: Login worked locally but failed in production.
+  
   Solution: Added Vercel production URL to Supabase Auth redirect settings.
   
 ### 3️⃣ GitHub Permission Conflicts During Deployment
-  
+
   Issue: Push permission errors due to multiple GitHub accounts.
+  
   Solution: Updated remote repository and re-authenticated using correct GitHub account.
+  
 ---
 
 ## 🔒 Security Considerations
