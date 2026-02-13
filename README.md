@@ -133,6 +133,12 @@ cd smart-bookmark-app
   Issue: Push permission errors due to multiple GitHub accounts.
   
   Solution: Updated remote repository and re-authenticated using correct GitHub account.
+
+### 4️⃣ Tailwind CSS styles not applying initially
+
+Issue: UI styles were not visible after adding Tailwind classes.
+
+Solution: Configured Tailwind content paths correctly and ensured global CSS was imported in the root layout.
   
 ---
 
